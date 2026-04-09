@@ -162,6 +162,16 @@
 
     .cam-placeholder p { font-size: .88rem; }
 
+    /* ── Camera notice bar ── */
+    .cam-notice {
+      background: #f1f5f9;
+      border-top: 1px solid var(--border);
+      padding: .55rem 1rem;
+      font-size: .78rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
     /* ── Start button ── */
     .btn-start {
       width: 100%;
@@ -283,10 +293,41 @@
     /* ── Footer ── */
     footer {
       text-align: center;
-      padding: .9rem 1rem;
+      padding: 1.25rem 1rem .9rem;
       font-size: .75rem;
       color: var(--muted);
       border-top: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .75rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: .5rem .75rem;
+    }
+
+    .footer-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: .3rem;
+      color: var(--brand);
+      text-decoration: none;
+      font-size: .78rem;
+      font-weight: 500;
+      padding: .3rem .65rem;
+      border: 1px solid #b6d9e8;
+      border-radius: 999px;
+      background: var(--accent);
+      transition: background .15s, border-color .15s;
+    }
+
+    .footer-links a:hover {
+      background: #d0eaf4;
+      border-color: var(--brand);
     }
 
     /* ── Desktop tweaks ── */
@@ -320,7 +361,7 @@
     <div class="logo-ring">&#127358;</div>
     <div>
       <h1>Colorectal Carcinoma Screening Tool</h1>
-      <p>Aga Khan University &mdash; AI-assisted pathology</p>
+      <p>An AI Demonstration Project of The University of Michigan Department of Pathology (Balis Lab) and The Center for Global Health Equity in Partnership with The Department of Pathology at Aga Khan University &mdash; Nairobi, Kenya</p>
     </div>
   </header>
 
@@ -358,6 +399,8 @@
         </div>
       </div>
 
+      <div class="cam-notice">&#128301; AI model is optimized for H&amp;E sections at 10&times; objective magnification.</div>
+
       <button class="btn-start" id="start-btn" onclick="init()">&#9654;&#65039; Start Camera</button>
     </div>
 
@@ -371,7 +414,15 @@
   </main>
 
   <footer>
-    For investigational use only &mdash; not a substitute for clinical diagnosis.
+    <div class="footer-links">
+      <a href="https://urldefense.com/v3/__https://www.pathology.med.umich.edu/__;!!GNU8KkXDZlD12Q!8agrgRHIM8SkzJ37jSnrXqPHHiVMI3atbg6si5i7OE4OkNAeZHRHvzqYP42UoKpjcMyq638KB9k5khVNxutWeZcV2iDE0Q$" target="_blank" rel="noopener">
+        &#127979; University of Michigan Department of Pathology
+      </a>
+      <a href="https://urldefense.com/v3/__https://globalhealthequity.umich.edu/__;!!GNU8KkXDZlD12Q!8agrgRHIM8SkzJ37jSnrXqPHHiVMI3atbg6si5i7OE4OkNAeZHRHvzqYP42UoKpjcMyq638KB9k5khVNxutWeZeFon5aaQ$" target="_blank" rel="noopener">
+        &#127758; UM Center for Global Health Equity
+      </a>
+    </div>
+    <div>For investigational use only &mdash; not a substitute for clinical diagnosis.</div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
